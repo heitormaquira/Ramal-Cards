@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f3f3f3;
+    font-family: 'Merriweather Sans', sans-serif;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 90%;
+    padding: 0;
+}
+
+.card {
+    border-radius: 20px; 
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+    height: auto;
+    padding: 1px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 300px; /* Ajuste este valor conforme necessário */
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.btn-title {
+    border-radius: 10px; 
+    font-size: 1.0rem;
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    background-color: #929292;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.card-title {
+    margin: 0;
+    transition: color 0.3s ease;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-family: 'Lato', sans-serif;
+}
+
+/* Estilizar as palavras "Ramal" e "Colaborador" */
+.d-flex strong {
+    font-weight: 'lato'; /* Para "Ramal" e "Colaborador" */
+    color: #929292; /* Cor específica para as palavras em negrito */
+}
+
+.d-flex {
+    font-size: 1rem;
+}
+
+.card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Alterar a cor do card ao passar o mouse sobre o título */
+.card:hover .btn-title {
+    background-color: #0000a0; /* Cor ao passar o mouse */
+}
