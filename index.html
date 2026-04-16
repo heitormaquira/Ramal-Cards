@@ -19,63 +19,61 @@
     </div>
 
     <script>
-        const colaboradores = [
-        { ramal: '5883', nome: 'Rafael Fiaux', setor: 'Almoxarifado' },
-{ ramal: '0000', nome: 'Debora Melo', setor: 'Comercial' },
-{ ramal: '5808', nome: 'Jessica Teixeira', setor: 'Comercial' },
-{ ramal: '5813', nome: 'Juliana Camargo', setor: 'Comercial' },
-{ ramal: '5879', nome: 'Jormelice|Giovanna', setor: 'Comercial' },
-{ ramal: '5806', nome: 'Kelly Cristina', setor: 'Comercial' },
-{ ramal: '5840', nome: 'Maricleia', setor: 'Comercial' },
-{ ramal: '5808', nome: 'Thais Santos', setor: 'Comercial' },
-{ ramal: '5812', nome: 'Valéria Pereira', setor: 'Comercial' },
-{ ramal: '5814', nome: 'Tayna Silva', setor: 'Comex' },
-{ ramal: '5873', nome: 'Ana Malezan', setor: 'Compras' },
-{ ramal: '5836', nome: 'João Vidal', setor: 'Compras' },
-{ ramal: '5884', nome: 'Rafael Felix', setor: 'Compras' },
-{ ramal: '5831', nome: 'Evelin Ribeiro', setor: 'CQ' },
-{ ramal: '5819', nome: 'Amanda Melo', setor: 'DP' },
-{ ramal: '5880', nome: 'Maria Silva', setor: 'Embalagem Sec.' },
-{ ramal: '5841', nome: 'Jessica Dourado', setor: 'Hemospon' },
-{ ramal: '5869', nome: 'Vanessa Araújo', setor: 'Laboratório' },
-{ ramal: '5805', nome: 'Eliane Figueiredo', setor: 'Licitação' },
-{ ramal: '5877', nome: 'Vinicius|Bruno', setor: 'Manutenção' },
-{ ramal: '5870', nome: 'N/A', setor: 'P&D' },
-{ ramal: '5800', nome: 'Gustavo Campi', setor: 'Recepção' },
-{ ramal: '5839', nome: 'Eliane', setor: 'Sala de Fotop..' },
-{ ramal: '5815', nome: 'Gabriela Alvarenga', setor: 'SAP' },
-{ ramal: '5823', nome: 'Gislaine Siani', setor: 'Tesouraria' },
-{ ramal: '5882', nome: 'André|Luiz', setor: 'TI' },
-{ ramal: '5863', nome: 'Tiago Mota', setor: 'TST' },
-{ ramal: 'N/A', nome: 'N/A', setor: 'N/A' }
+    const colaboradores = [
+        { ramal: '5801', nome: 'Recepção Maquira', setor: 'Administrativo / Recepção' },
+        { ramal: '5802', nome: 'Ti Maquira', setor: 'Tecnologia da Informação' },
+        { ramal: '5803', nome: 'Almoxarifado', setor: 'Almoxarifado' },
+        { ramal: '5804', nome: 'P&D', setor: 'Produção / P&D' },
+        { ramal: '5805', nome: 'Licitação', setor: 'Licitação' },
+        { ramal: '5806', nome: 'Comercial Nacional', setor: 'Comercial Nacional' },
+        { ramal: '5807', nome: 'Manutenção', setor: 'Manutenção' },
+        { ramal: '5808', nome: 'Jessica Nayane', setor: 'Comercial Nacional' },
+        { ramal: '5812', nome: 'Valeria Manine da Costa Pereira', setor: 'Comercial Nacional' },
+        { ramal: '5813', nome: 'Juliana Leite', setor: 'Comercial Nacional' },
+        { ramal: '5814', nome: 'Beatriz Faganello Frezzato', setor: 'Comex' },
+        { ramal: '5815', nome: 'SAP', setor: 'Gestão da Qualidade' },
+        { ramal: '5819', nome: 'Luana Liamari Dos Santos', setor: 'Financeiro' },
+        { ramal: '5822', nome: 'Gislaine Siani', setor: 'Financeiro / Tesouraria' },
+        { ramal: '5823', nome: 'Gislaine Sofientini Siani', setor: 'Financeiro / Tesouraria' },
+        { ramal: '5824', nome: 'Laboratorio', setor: 'Produção' },
+        { ramal: '5830', nome: 'Segurança do Trabalho', setor: 'RH / Segurança do Trabalho' },
+        { ramal: '5831', nome: 'CQ', setor: 'Controle de Qualidade' },
+        { ramal: '5836', nome: 'Compras', setor: 'Administrativo / Compras' },
+        { ramal: '5837', nome: 'Compras', setor: 'Administrativo / Compras' },
+        { ramal: '5838', nome: 'Gustavo Martins Bernardes', setor: 'Comex' },
+        { ramal: '5839', nome: 'Sala Amarela', setor: 'Produção / Sala Amarela' },
+        { ramal: '5840', nome: 'Maricleia Luis', setor: 'Comercial Nacional' },
+        { ramal: '5841', nome: 'Hemospon', setor: 'Produção / Hemospon' },
+        { ramal: '5842', nome: 'Makertech', setor: 'Administrativo' },
+        { ramal: '5844', nome: 'Jormelice Pinheiro Vidigal', setor: 'Comercial Nacional' },
+        { ramal: '5846', nome: 'Debora Melo', setor: 'Comercial Nacional' },
+        { ramal: '5847', nome: 'Thais', setor: 'Comercial Nacional' },
+        { ramal: '5848', nome: 'Alayssa Mirelle Ramos Soares', setor: 'RH' }
+    ];
 
+    const container = document.querySelector('.row');
 
-
-        ];
-
-        const container = document.querySelector('.row');
-
-        colaboradores.forEach(colaborador => {
-            const colDiv = document.createElement('div');
-            colDiv.className = 'col';
-            colDiv.innerHTML = `
-                <div class="card">
-                    <div class="card-body">
-                        <button class="btn btn-primary btn-title w-100 mb-2">${colaborador.setor}</button>
-                        <div class="d-flex justify-content-between">
-                            <span><strong>Ramal</strong></span>
-                            <span>${colaborador.ramal}</span>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <span><strong>Colaborador</strong></span>
-                            <span>${colaborador.nome}</span>
-                        </div>
+    colaboradores.forEach(colaborador => {
+        const colDiv = document.createElement('div');
+        colDiv.className = 'col';
+        colDiv.innerHTML = `
+            <div class="card">
+                <div class="card-body">
+                    <button class="btn btn-primary btn-title w-100 mb-2">${colaborador.setor}</button>
+                    <div class="d-flex justify-content-between">
+                        <span><strong>Ramal</strong></span>
+                        <span>${colaborador.ramal}</span>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <span><strong>Colaborador</strong></span>
+                        <span>${colaborador.nome}</span>
                     </div>
                 </div>
-            `;
-            container.appendChild(colDiv);
-        });
-    </script>
+            </div>
+        `;
+        container.appendChild(colDiv);
+    });
+</script>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-1n11+L6DLR8bKxVwOdL20wAA46g+mlEGi91Hg9UQ4OZ9xBSFwBT6pPfYZ8qF2A3Z"
